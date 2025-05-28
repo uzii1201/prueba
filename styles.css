@@ -1,0 +1,192 @@
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #008080; /* Verde azulado oscuro */
+  color: black;
+  margin: 1rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Contenedor principal */
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 1px 1px 0 #004040;
+  user-select: text;
+}
+
+/* Estilos ventanas tipo Win3.11 */
+.view {
+  background: #c0c0c0; /* gris claro típico */
+  border: 2px solid #000080; /* azul clásico */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 4px 4px 0 #808080; /* sombra simple */
+  font-size: 14px;
+  border-radius: 0;
+}
+
+/* Oculto */
+.hidden {
+  display: none;
+}
+
+/* Títulos en ventanas */
+.view h2 {
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 1rem;
+  user-select: text;
+}
+
+/* Carpetas estilo botón Win3.11 */
+.folder {
+  background: linear-gradient(to bottom, #000080 0%, #0000cc 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  cursor: pointer;
+  width: 160px;
+  border: 2px outset #808080;
+  box-shadow: inset 1px 1px 0 #000000;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 13px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+/* Icono carpeta (simple, emoji para mantener la esencia) */
+.folder::before {
+  content: "📁";
+  margin-right: 0.5rem;
+}
+
+/* Hover carpeta */
+.folder:hover {
+  background: linear-gradient(to bottom, #0000ff 0%, #0040ff 100%);
+  border-color: #0000ff;
+  box-shadow: inset 1px 1px 0 #000000;
+}
+
+/* Lista de archivos */
+#files-list {
+  margin-top: 0.5rem;
+}
+
+/* Cada archivo fila */
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e0e0e0;
+  border: 2px inset #808080;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 0.25rem;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  user-select: text;
+}
+
+/* Link archivo */
+.file-item a {
+  color: #000080;
+  text-decoration: none;
+  flex-grow: 1;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-item a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Botones pequeños */
+button {
+  margin-left: 0.5rem;
+  font-size: 12px;
+  padding: 2px 8px;
+  border: 2px outset #808080;
+  background: #c0c0c0;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 0 #fff;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-weight: bold;
+}
+
+button:active {
+  border-style: inset;
+  box-shadow: none;
+}
+
+/* Inputs contraseña y file */
+input[type="password"],
+input[type="file"],
+select {
+  margin-left: 0.5rem;
+  font-size: 13px;
+  border: 2px inset #808080;
+  padding: 2px 6px;
+  vertical-align: middle;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  user-select: text;
+}
+
+/* Formulario de subida */
+form {
+  background: #c0c0c0;
+  border: 2px solid #000080;
+  padding: 1rem;
+  box-shadow: 4px 4px 0 #808080;
+  font-size: 14px;
+  width: 320px;
+  border-radius: 0;
+  user-select: none;
+}
+
+/* Labels inline */
+form label {
+  user-select: text;
+  font-weight: bold;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  body {
+    margin: 0.5rem;
+  }
+
+  .folder {
+    width: 100%;
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .file-item {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+}
